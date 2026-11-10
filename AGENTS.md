@@ -28,3 +28,10 @@ use the editor.
   own key and store it in Secrets.
 - **Secrets.** Lovable manages them. Do not put secret values in the repo.
 <!-- LOVABLE:END -->
+
+## Project rules
+
+- Provider listings and categories live in `src/lib/providers.ts` as static demo data; every listing must stay visibly labelled as demo with placeholder phone numbers until a real data source replaces it — the product must never imply real businesses, reviews or credentials.
+- Explore page filters (`q`, `location`, `category`, `emergency`) are URL search params validated in `src/routes/explore.tsx` and filtered by `filterProviders`, so results are shareable and covered by `src/lib/providers.test.ts`.
+- Shared layout (header, footer, toaster) wraps `<Outlet />` in `src/routes/__root.tsx`; site-wide pieces live in `src/components/site/`.
+- The listing and correction forms are front-end previews only and must say so on screen until a backend is connected.
